@@ -2,10 +2,10 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import Header from "./Header";
-import ContactList from "./ContactList";
-import AddContact from "./AddContact";
-import ContactDetail from "./ContactDetail";
+import Header from "./components/Header";
+import ContactList from "./components/ContactList";
+import AddContact from "./components/AddContact";
+import ContactDetail from "./components/ContactDetail";
 
 function App() {
     const LOCALS_STORAGE_KEY = "contacts";
