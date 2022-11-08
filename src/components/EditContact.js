@@ -1,38 +1,40 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContactsCrud } from "../context/ContactsCrudContext";
 
-const AddContact = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const { addContactHandler } = useContactsCrud();
+const EditContact = () => {
+  const location = useLocation();
   const navigate = useNavigate();
+  const { id, name, email } = location.state.contact;
+  const [newEmail, setNewEmail] = useState(email);
+  const [newName, setNewName] = useState(name);
+  const { updateContactHandler } = useContactsCrud();
 
-  const add = (e) => {
+  const update = (e) => {
     e.preventDefault();
-    if (name === "" || email === "") {
+    if (newName === "" || newEmail === "") {
       alert("All fields are required!");
       return;
     }
-    addContactHandler({ name, email });
-    setName("");
-    setEmail("");
+    updateContactHandler({ id, name: newName, email: newEmail });
+    setNewName("");
+    setNewEmail("");
     navigate("/");
   };
 
   return (
     <div className="ui header">
-      <h2>Add Contact</h2>
-      <form className="ui form" onSubmit={add}>
+      <h2>Edit Contact</h2>
+      <form className="ui form" onSubmit={update}>
         <div className="field">
           <label>Name</label>
           <input
             type="text"
             name="first-name"
             placeholder="Name"
-            value={name}
+            value={newName}
             onChange={(e) => {
-              setName(e.target.value);
+              setNewName(e.target.value);
             }}
           />
         </div>
@@ -42,14 +44,14 @@ const AddContact = () => {
             type="email"
             name="email"
             placeholder="Email"
-            value={email}
+            value={newEmail}
             onChange={(e) => {
-              setEmail(e.target.value);
+              setNewEmail(e.target.value);
             }}
           />
         </div>
 
-        <button className="ui primary button">Add</button>
+        <button className="ui green button">Update</button>
         <Link to="/">
           <button className="ui grey button">Back</button>
         </Link>
@@ -58,4 +60,4 @@ const AddContact = () => {
   );
 };
 
-export default AddContact;
+export default EditContact;

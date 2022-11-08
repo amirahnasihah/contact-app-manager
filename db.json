@@ -1,0 +1,19 @@
+{
+  "contacts": [
+    {
+      "id": "9ff88cdc-0b38-43ba-88bf-e5accac20bdb",
+      "name": "Zenitsu",
+      "email": "zenitsu@demon.sy"
+    },
+    {
+      "id": "ddeb6556-3216-41d1-86fe-151457d23298",
+      "name": "Vivaldi",
+      "email": "4seasons@email.com"
+    },
+    {
+      "id": "fe3e14b3-e23b-4da1-9bed-170fe825d11b",
+      "name": "Zenitsu",
+      "email": "zenitsu@demon.sy"
+    }
+  ]
+}
