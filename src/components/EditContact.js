@@ -1,29 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class AddContact extends React.Component {
-  state = {
-    name: "",
-    email: "",
-  };
+class EditContact extends React.Component {
+  constructor(props) {
+    super(props);
+    const { id, name, email } = props.location.state.contact;
+    this.state = {
+      id,
+      name,
+      email,
+    };
+  }
 
-  add = (e) => {
+  update = (e) => {
     e.preventDefault();
     if (this.state.name === "" || this.state.email === "") {
       alert("All fields are required!");
       return;
     }
-    this.props.addContactHandler(this.state);
+    this.props.updateContactHandler(this.state);
     this.setState({ name: "", email: "" });
-    console.log(this.props);
+
     this.props.history.push("/");
   };
 
   render() {
     return (
       <div className="ui header">
-        <h2>Add Contact</h2>
-        <form className="ui form" onSubmit={this.add}>
+        <h2>Edit Contact</h2>
+        <form className="ui form" onSubmit={this.update}>
           <div className="field">
             <label>Name</label>
             <input
@@ -49,7 +54,7 @@ class AddContact extends React.Component {
             />
           </div>
 
-          <button className="ui primary button">Add</button>
+          <button className="ui green button">Update</button>
           <Link to="/">
             <button className="ui grey button">Back</button>
           </Link>
@@ -59,4 +64,4 @@ class AddContact extends React.Component {
   }
 }
 
-export default AddContact;
+export default EditContact;
