@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": "3f420074-aaf6-459e-8e71-88be10c7a0a5",
+      "name": "Jack Sparrow",
+      "email": "sparrow@pirate.io"
+    },
+    {
+      "id": "cd412d37-821c-4c3a-838a-477b1ece3b4b",
+      "name": "Beethoven",
+      "email": "beeth@email.com"
+    },
+    {
+      "id": "7698e76c-529f-462f-a93a-7a85bb31bfb6",
+      "name": "Schumann",
+      "email": "schumann@email.com"
+    },
+    {
+      "id": "fa100650-d947-4c72-9ec5-e8d95524089d",
+      "name": "Captain America",
+      "email": "capt@hero.mv"
+    },
+    {
+      "id": "b2e7482c-a075-4ddc-a2f9-54e9bc988ac3",
+      "name": "Mozart",
+      "email": "mozart@email.com"
+    },
+    {
+      "id": "a9f54124-1f32-4e1e-b3e7-9a19c553b4c2",
+      "name": "Chopin",
+      "email": "chopin@email.com"
+    }
+  ]
+}
