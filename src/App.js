@@ -1,11 +1,12 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import ContactList from "./components/ContactList";
 import AddContact from "./components/AddContact";
 import ContactDetail from "./components/ContactDetail";
+import ConfirmDelete from "./components/ConfirmDelete";
 
 function App() {
   const LOCALS_STORAGE_KEY = "contacts";
@@ -64,6 +65,7 @@ function App() {
             )}
           />{" "}
           <Route path="/contact/:id" component={ContactDetail}></Route>{" "}
+          <Route path="/confirm-delete" component={ConfirmDelete} />
         </Switch>{" "}
       </Router>{" "}
     </div>
@@ -71,3 +73,11 @@ function App() {
 }
 
 export default App;
+
+{
+  /* 
+  <Route path="/confirm-delete/:id" component={ConfirmDelete} />
+  <Link to="/confirm-delete">
+  <button style={{ color: "blue" }}>confirm delete</button>
+</Link>; */
+}
