@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ContactCard from "./ContactCard";
 
 function ContactList(props) {
@@ -25,7 +25,7 @@ function ContactList(props) {
           <button className="ui right floated button blue">Add Contact</button>
         </Link>
       </h2>
-      <div className="ui celled">{renderContactList}</div>sdjasjd
+      <div className="ui celled">{renderContactList}</div>
     </div>
   );
 }

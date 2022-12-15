@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import Header from "./components/Header";
 import ContactList from "./components/ContactList";
 import AddContact from "./components/AddContact";
-import ContactDetail from "./components/ContactDetail";
-import ConfirmDelete from "./components/ConfirmDelete";
+import ContactCard from "./components/ContactCard";
+import ConfirmDeleteWrapper from "./components/ConfirmDeletePage";
 
 function App() {
   const LOCALS_STORAGE_KEY = "contacts";
@@ -64,8 +64,11 @@ function App() {
               <AddContact {...props} addContactHandler={addContactHandler} />
             )}
           />{" "}
-          <Route path="/contact/:id" component={ContactDetail}></Route>{" "}
-          <Route path="/confirm-delete" component={ConfirmDelete} />
+          {/* <Route path="/confirm-delete/:id" component={ContactCard} /> */}
+          <Route
+            path="/confirm-delete/:id"
+            component={ConfirmDeleteWrapper}
+          />{" "}
         </Switch>{" "}
       </Router>{" "}
     </div>
@@ -73,11 +76,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* 
-  <Route path="/confirm-delete/:id" component={ConfirmDelete} />
-  <Link to="/confirm-delete">
-  <button style={{ color: "blue" }}>confirm delete</button>
-</Link>; */
-}

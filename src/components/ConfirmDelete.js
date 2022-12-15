@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { Confirm, Icon } from "semantic-ui-react";
 
 const ConfirmDelete = (props) => {

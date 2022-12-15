@@ -12,6 +12,7 @@
     - [Deployment](#deployment)
     - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
 - [Styling - Semantic UI React](#styling---semantic-ui-react)
+  - [App.js](#appjs)
 
 # Getting Started with Create React App
 
@@ -89,3 +90,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # Styling - Semantic UI React
 
 UI Library used in this app: [Semantic UI React](https://react.semantic-ui.com/). The official Semantic-UI-React integration.
+
+## App.js  
+
+- The import statement for ConfirmDeletePage is commented out, which means that it will not be used in the code.
+- The code uses the ?? operator, which is a nullish coalescing operator introduced in JavaScript version ECMAScript 2020. This operator is not supported in older versions of JavaScript.
+- The code uses the useEffect hook, which is a function that is called after a component is rendered in a React application. This hook is used to perform side effects, such as setting the value of LOCALS_STORAGE_KEY in local storage.
+- The addContactHandler function is used to add a new contact to the contacts state. This function is passed to the AddContact component as a prop, and is called when the user submits the form to add a new contact.
+- The removeContactHandler function is used to remove a contact from the contacts state. This function is passed to the ContactList component as a prop, and is called when the user clicks on a button to delete a contact.
+- The render prop is used in the Route components to render the components that are rendered when the user navigates to a specific route. For example, when the user navigates to the /add route, the AddContact component is rendered.
